@@ -10,3 +10,11 @@ To install the dependencies, run:
 gem install bundler
 bundle
 ```
+
+# Testing
+
+Tests are located in the _spec_ directory. Run:
+
+```
+bundle exec rspec
+```
