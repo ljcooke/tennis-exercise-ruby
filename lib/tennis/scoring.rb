@@ -2,9 +2,13 @@ module Tennis
   # Shared scoring logic for sets and games.
   # Players are referred to by integers 1 and 2.
   class Scoring
+    DEFAULT_WIN_MARGIN = 2
+
+    attr_reader :score1, :score2
+
     # A player wins if their score is at least `win_minimum` and is greater than
     # the opponent's score by at least `win_margin`.
-    def initialize(win_minimum:, win_margin:)
+    def initialize(win_minimum:, win_margin: DEFAULT_WIN_MARGIN)
       @score1 = 0
       @score2 = 0
       @win_minimum = win_minimum
