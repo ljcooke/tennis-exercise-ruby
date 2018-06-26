@@ -2,14 +2,19 @@
 
 This is a Ruby library that provides a scoring system for a tennis tournament.
 
-An example match is provided in *spec/match_spec.rb*, which can be tested using RSpec.
+An example match is provided in [spec/match_spec.rb](spec/match_spec.rb), which can be tested using RSpec.
 
 ## Usage Example
 
-```ruby
-# Hack to allow the tennis module to be imported from lib/
-$LOAD_PATH.unshift File.expand_path('lib', __dir__)
+First, add the [lib](lib) directory to the load path:
 
+```ruby
+$LOAD_PATH.unshift File.expand_path('lib', __dir__)
+```
+
+Afterwards, you can import the [tennis](lib/tennis) library and start a [`Tennis::Match`](lib/tennis/match.rb).
+
+```ruby
 require 'tennis'
 
 match = Tennis::Match.new('player 1', 'player 2')
