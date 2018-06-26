@@ -5,13 +5,13 @@ RSpec.describe Tennis::Match do
   let(:player2) { 'player 2' }
   let(:match) { Tennis::Match.new(player1, player2) }
 
-  context 'with a new match' do
-    it 'reports an initial score of 0-0 for set and game' do
-      expect(match.score).to eq '0-0, 0-0'
+  context 'when initialized' do
+    it 'reports a score of 0-0' do
+      expect(match.score).to eq '0-0'
     end
   end
 
-  xcontext 'with the example match provided' do
+  context 'with the example match provided' do
     it 'returns the expected score at each step' do
       match.point_won_by(player1)
       match.point_won_by(player2)
