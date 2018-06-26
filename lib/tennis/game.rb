@@ -21,7 +21,8 @@ module Tennis
 
     # Override the default score formatting.
     def score
-      return super if tie_break? || won?
+      return nil if won?
+      return super if tie_break?
       return 'Deuce' if deuce?
 
       case advantage

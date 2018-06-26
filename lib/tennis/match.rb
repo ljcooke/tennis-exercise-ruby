@@ -1,5 +1,3 @@
-require_relative './game'
-
 module Tennis
   # A tennis match consists of one set, each consisting of many games.
   class Match

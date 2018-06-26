@@ -37,7 +37,7 @@ module Tennis
     # Return the score in the format [player 1]-[player 2].
     # If the game is over, return nil.
     def score
-      "#{score1}-#{score2}" unless won?
+      "#{score1}-#{score2}"
     end
 
     # Whether the score is in a deuce position.
@@ -47,13 +47,16 @@ module Tennis
         score2 >= deuce_minimum
     end
 
-    # Whether one player is in an 'advantage' position. Return the number of
-    # the player if true, or nil otherwise.
-    def advantage
-      return nil unless (score1 - score2).abs == 1 &&
-        score1 >= deuce_minimum && score2 >= deuce_minimum
+    # Whether one player is in an 'advantage' position.
+    def advantage?
+      (score1 - score2).abs == 1 &&
+        score1 >= deuce_minimum &&
+        score2 >= deuce_minimum
+    end
 
-      score1 > score2 ? 1 : 2
+    # Return the number of the player with an 'advantage', or nil if none.
+    def advantage
+      (score1 > score2 ? 1 : 2) if advantage?
     end
 
     private

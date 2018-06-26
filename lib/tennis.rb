@@ -1,2 +1,3 @@
+require 'tennis/game'
+require 'tennis/set'
 require 'tennis/match'
-require 'tennis/scoring'
