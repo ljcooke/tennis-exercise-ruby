@@ -1,5 +1,6 @@
 Metrics/BlockLength:
-  Enabled: false
+  Exclude:
+    - 'spec/**/*'
 
 Style/BlockComments:
   Exclude:
