@@ -2,6 +2,7 @@ require_relative './game'
 require_relative './scoring'
 
 module Tennis
+  # A set consists of many games.
   class Set < Scoring
     WIN_MINIMUM = 7
 
@@ -22,10 +23,9 @@ module Tennis
       start_game! if active_game.nil?
       active_game.increment(player: player)
 
-      if active_game.won?
-        super(player: active_game.winner)
-        end_game!
-      end
+      return unless active_game.won?
+      super(player: active_game.winner)
+      end_game!
     end
 
     # Report the set score, followed by the game score if a game is in progress.

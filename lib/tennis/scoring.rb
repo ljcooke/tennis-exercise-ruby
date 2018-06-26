@@ -61,7 +61,6 @@ module Tennis
 
     private
 
-    attr_reader :score1, :score2
     attr_reader :win_minimum, :win_margin, :deuce_minimum
   end
 end

@@ -71,15 +71,17 @@ RSpec.describe Tennis::Scoring do
     end
   end
 
-  context 'when a player is ahead by a winning margin but below the minimum to win' do
-    before(:example) do
-      3.times { scoring.increment(player: 1) }
-      1.times { scoring.increment(player: 2) }
-    end
+  context 'when a player is ahead by a winning margin' do
+    context 'below the minimum to win' do
+      before(:example) do
+        3.times { scoring.increment(player: 1) }
+        1.times { scoring.increment(player: 2) }
+      end
 
-    it 'does not report a win' do
-      expect(scoring.won?).to be false
-      expect(scoring.winner).to be nil
+      it 'does not report a win' do
+        expect(scoring.won?).to be false
+        expect(scoring.winner).to be nil
+      end
     end
   end
 end

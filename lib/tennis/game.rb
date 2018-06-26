@@ -1,6 +1,7 @@
 require_relative './scoring'
 
 module Tennis
+  # A game consists of many points.
   class Game < Scoring
     WIN_MINIMUM = 4
     TIE_BREAK_WIN_MINIMUM = 7
